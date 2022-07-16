@@ -11,7 +11,8 @@ namespace Games.Logic.RPSLS
 		public enum Rock
 		{
 			Scissor,
-			
+			Spock,
+			Paper
 		}
 
 		public enum Scissor
