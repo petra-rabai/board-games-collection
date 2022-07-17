@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games.Logic.RPSLS", "Games.Logic.RPSLS\Games.Logic.RPSLS.csproj", "{C08B9AB7-6826-40D1-AAF6-FEBE59C6F2D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Games.Logic.RPSLS", "Games.Logic.RPSLS\Games.Logic.RPSLS.csproj", "{C08B9AB7-6826-40D1-AAF6-FEBE59C6F2D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games.Logic.BlackJack", "Games.Logic.BlackJack\Games.Logic.BlackJack.csproj", "{6FCE9C1C-3AF9-45A7-ABB5-2288C095861D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Games.Logic.BlackJack", "Games.Logic.BlackJack\Games.Logic.BlackJack.csproj", "{6FCE9C1C-3AF9-45A7-ABB5-2288C095861D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games.Logic.FourInARow", "Games.Logic.FourInARow\Games.Logic.FourInARow.csproj", "{BC21C9EA-8EE5-41DA-A794-C9B37CBE137B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Games.Logic.FourInARow", "Games.Logic.FourInARow\Games.Logic.FourInARow.csproj", "{BC21C9EA-8EE5-41DA-A794-C9B37CBE137B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games.Logic.Chess", "Games.Logic.Chess\Games.Logic.Chess.csproj", "{F87BECB3-4A80-4590-AC00-2E96424BA674}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Games.Logic.Chess", "Games.Logic.Chess\Games.Logic.Chess.csproj", "{F87BECB3-4A80-4590-AC00-2E96424BA674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games.Logic.Tests", "Games.Logic.Tests\Games.Logic.Tests.csproj", "{77533911-6F12-4290-BC31-50284039E5A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F87BECB3-4A80-4590-AC00-2E96424BA674}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F87BECB3-4A80-4590-AC00-2E96424BA674}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F87BECB3-4A80-4590-AC00-2E96424BA674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77533911-6F12-4290-BC31-50284039E5A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77533911-6F12-4290-BC31-50284039E5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77533911-6F12-4290-BC31-50284039E5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77533911-6F12-4290-BC31-50284039E5A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
