@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Games.Logic.BlackJack\Games.BlackJack.csproj" />
     <ProjectReference Include="..\Games.Logic.RPSLS\Games.RPSLS.csproj" />
   </ItemGroup>
 
