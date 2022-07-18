@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Games.Logic.RPSLS
+﻿namespace Games.RPSLS
 {
-	public class BaseLogic : IBaseLogic
+	public class Logic : ILogic
 	{
-		public string Winner { get; set; }
+		public string Result { get; set; } = "";
 
-		private List<string> choosedGameItems = new List<string>();
+		private List<string> _selectedGameItems = new();
 
-		private Dictionary<Tuple<string, string>, string> winnerCheck = new Dictionary<Tuple<string, string>, string>()
+		private readonly Dictionary<Tuple<string, string>, string> _resultCheck = new Dictionary<Tuple<string, string>, string>()
 		{
 				{new Tuple<string, string>("Paper", "Scissor"), "Scissor"},
 				{new Tuple<string, string>("Scissor", "Paper"), "Scissor"},
@@ -36,36 +30,38 @@ namespace Games.Logic.RPSLS
 				{new Tuple<string, string>("Paper", "Rock"), "Paper"}
 		};
 
-		private Tuple<string, string> comperableItems;
+		private Tuple<string, string> _selectedItems;
 
 
-		public string CompareableItemsValidator(string itemOne, string itemTwo)
+		public string SelectedItemsValidator(string itemOne, string itemTwo)
 		{
-			choosedGameItems = GetChoosedGameItems(itemOne, itemTwo);
-
-			comperableItems = LoadCompareableItems();
-
-			if (winnerCheck.ContainsKey(comperableItems))
+			if (!string.IsNullOrEmpty(itemOne) && !string.IsNullOrEmpty(itemTwo))
 			{
-				Winner = winnerCheck[comperableItems];
+				_selectedGameItems = GetSelectedGameItems(itemOne, itemTwo);
+
+				_selectedItems = LoadSelectedItems();
+
+				Result = _resultCheck.ContainsKey(_selectedItems)
+					? _resultCheck[_selectedItems]
+					: "Error! Selected items are invalid";
 			}
+			else
+				Result = "Error! Items selection not success";
 
-			return Winner;
+			return Result;
 		}
 
-		private List<string> GetChoosedGameItems(string itemOne, string itemTwo)
+		private List<string> GetSelectedGameItems(string itemOne, string itemTwo)
 		{
-			choosedGameItems.Add(itemOne);
-			choosedGameItems.Add(itemTwo);
+			_selectedGameItems.Add(itemOne);
+			_selectedGameItems.Add(itemTwo);
 
-			return choosedGameItems;
+			return _selectedGameItems;
 		}
 
-		private Tuple<string, string> LoadCompareableItems()
+		private Tuple<string, string> LoadSelectedItems()
 		{
-			comperableItems = new Tuple<string, string>(choosedGameItems[0], choosedGameItems[1]);
-
-			return comperableItems;
+			return new Tuple<string, string>(_selectedGameItems[0], _selectedGameItems[1]);
 		}
 
 
