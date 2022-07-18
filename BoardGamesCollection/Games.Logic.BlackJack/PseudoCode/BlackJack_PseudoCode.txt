@@ -1,0 +1,54 @@
+﻿Game objects:
+	Player
+	Dealer (Machine)
+	Cardpack
+	GameBoard
+
+Cardpack object:
+	52 cards
+	4 suite: Clubs,Dimonds,Hearts,Spades
+	13 cards / suite: Ace=1 or 11,2,3,4,5,6,7,8,9,10,Jack=10,Queen=10,King=10
+
+Player: 
+	playerPoint
+	palyerCards
+	playerDecision
+
+Dealer:
+	dealerPoint
+	dealerCards
+	dealerDecision
+
+Gameboard: 
+	playerName	
+	playerCredit
+	playerBet
+	gameGoal = cards sum equal 21
+	gameTurn
+	cardsAtStartforPlayer = 2
+	cardsAtStartforDealer = 2
+	First round:
+		Start after the player bet added to the board.
+		first card face up for the player and the dealer too (both cards are displayed to the player)
+		second card face up for the player, and face down to the dealer (this card is hidden from the player)
+		If the 2 cards for the player are ace and 10 (10,JACK,Queen,King) the player win unless the dealer has the same score.
+		If the 2 card are not ace and 10 (10,JACK,Queen,King) the player choose a decision based on the two owned card and the 1 displayed dealer card.
+		
+	Based on the player decision the next round start:
+		Player
+		
+		Hit: Ask for another card. You can ask for a hit until you decide to stand or else bust
+		Stand: Decide that you take no additional cards. The dealer can then play this hand
+		Double Down: Double the amount of your bet + an extra card + stand
+		Split: If you have two cards of the same value, you can split them into two separate hands. The bet is the same as the original bet so essentially doubling your bet.
+		Surrender: You may surrender half your bet if you think you are more likely to lose the hand.
+		Insurance: If the dealer’s up card is an Ace, you can take insurance, which is a bet that is half the value of your original bet. You are essentially wagering on the dealer getting a blackjack.
+		
+		Dealer get the following decision based on player decision 
+		
+		The dealer automatically wins if player bust or surrender
+		The dealer also wins if his total hand value is closest to 21
+		If the dealer has a total of 16 or less, he must hit
+		If the dealer has a total of 18 or more, then he must stand
+		If the dealer has a hard 17, he must stand
+		If the dealer has a soft 17, the dealer must hit

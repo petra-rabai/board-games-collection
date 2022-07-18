@@ -1,0 +1,140 @@
+﻿Program identities:
+Players:
+	Player:
+		Name
+		Selected disc color
+		Available disc count
+		bool firstplayer
+
+	Machine:
+		Name
+		Selected disc color
+		Available disc count
+		bool firstplayer
+
+	Players actions:
+		GetName
+		GetDiscColor
+
+
+Grid:
+	Size:
+		colum
+		row
+	Cell:
+		positon:
+			colum,row
+		occupied
+			true,false
+
+	Grid actions:
+		CreateTheGrid
+			GetGridSize(palyer)
+			    int[] size=colum,row
+				return size
+			DrawTheGridToTheScreen(size)
+			CreateCellsMatrix(size)
+				int,bool,string[] cellsmatrix=cellposition,occopied,color
+
+				
+
+
+Game:
+	gameMode
+		player vs player
+		player vs machine
+	gameMenu
+		New game
+		Save game
+		Load game
+		Statistics
+		Game rules
+		Author
+		Quit
+	choosedMenu
+	winner
+
+	Game actions:
+		LoadMainUI
+			GameTitle
+			GameDescription
+			GameMenu
+				GetChoosedMenuFromThePlayer
+				MenuNavigation(choosedMenu)
+				NewGame
+					ChooseGameMode
+						return gameMode
+					StartTheGame(gameMode)
+						call Player.GetName
+						call Palyer.GetDiscColor
+						call Board.GetBoardSizeFromThePlayer
+						call Board.CreateTheBoard
+						SelectFirstPalyer (random)
+							firstplayer=true
+						FirstPlayer drop one disc to the center colum and last row
+							FirstPlayer availableDiscCount decrase with 1
+							Set cell occupied = true in the cellmatrix
+							store the disccolor to the cellmatrix
+						Gameloop
+							SecondPlayer drop one disc to an empty colum
+								SelectAnEmptyColum(random?)
+									Check the colum is empty (occupied is false in all row in the colum selected colum)
+										if the colum is empty
+											drop one disc to it
+											SecondPlayer availableDiscCount decrase with 1
+											set cell occupied = true in the cellmatrix
+											store the disccolor to the cellmatrix
+										else
+											select another colum
+							FirstPlayer drop one disc to an empty colum
+								SelectAcolum(random?)
+									Check the colum is empty (no any disc droped the colum)
+										if the colum is empty
+											drop one disc to it
+											FirstPlayer availableDiscCount decrase with 1
+											set cell occupied = true in the cellmatrix
+											store the disccolor to the cellmatrix
+										else
+											select another colum
+							If all colum is occupied
+								Gameloop(switch players/round)
+									Player check where are the same colored discs in the last row and choose a position to the closer to it.
+										GetPlayerDiscsPosition
+											serach the cellposition where firstplayer color stored
+											Display the information on the screen
+											GetTheNextDiscPositonFromThePlayer
+										DropTheDisc
+											Player availableDiscCount decrase with 1
+											set cell occupied = true in the cellmatrix
+											store the disccolor to the cellmatrix
+	
+									CheckTheWinner
+										four same color discs in a row (vertical,horizontal or diagonal).
+										ChecktheCurrentDiscsPositions
+											CheckVerticalPositon
+												searchloop
+													Check disccolors in all rows
+														if find four same color in a row
+															Search the color - player equality
+															Store the winner
+				SaveGame
+					Save an unfinished game state
+				LoadGame
+					Load an unfinished Saved game state
+				Statistics
+					Display the winners information on the screen
+				Game rules
+					Display the game rules discription on the screen
+				Author
+					Display a note from the game creator and soruce informations
+				Quit
+					Close the Application"
+
+
+
+
+A gameplay example, 
+shows the first player starting Connect Four by dropping one of their yellow discs into the center column of an empty game board. 
+The two players then alternate turns dropping one of their discs at a time into an unfilled column, 
+until the second player, with red discs, achieves a diagonal four in a row, and wins the game. 
+If the board fills up before either player achieves four in a row, then the game is a draw.
