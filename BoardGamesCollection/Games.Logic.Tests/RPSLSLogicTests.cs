@@ -3,7 +3,7 @@ using Games.RPSLS;
 
 namespace Games.Tests
 {
-	public class Tests
+	public class RPSLSLogicTests
 	{
 		[TestCase("Paper", "Scissor", ExpectedResult = "Scissor")]
 		[TestCase("Scissor", "Paper", ExpectedResult = "Scissor")]

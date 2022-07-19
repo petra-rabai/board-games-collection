@@ -22,7 +22,7 @@ public class CardDeck : ICardDeck
 	private List<Suit> CreateCardDeck()
 	{
 		LoadCardSuitName();
-
+		_card.Id = 0;
 		for (int suitCountIndex = 0; suitCountIndex < _suit.Name.Length; suitCountIndex++)
 		{
 			for (int cardValue = 0; cardValue < 13; cardValue++)
