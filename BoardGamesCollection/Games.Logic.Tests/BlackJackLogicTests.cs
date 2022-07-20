@@ -1,5 +1,5 @@
-﻿using Games.BlackJack;
-using FluentAssertions;
+﻿using FluentAssertions;
+using Games.BlackJack;
 using Games.BlackJack.Models;
 
 namespace Games.Tests;
@@ -10,16 +10,14 @@ public class BlackJackLogicTests
 	[Test]
 	public void CardPackCreationSuccess()
 	{
-		ICard card = new Card();
-		ISuit suit = new Suit();
+		CardDeck cardDeck = new CardDeck();
 
-		CardDeck cardDeck = new CardDeck(card,suit);
-		cardDeck.GetCardDeck();
+		Card[] testDeckOfCards = cardDeck.GetCardDeck();
 
-		cardDeck.DeckOfCards.Should().NotBeEmpty();
-		cardDeck.DeckOfCards.Count.Should().Be(52);
+		testDeckOfCards.Should().BeEquivalentTo(cardDeck.DeckOfCards);
+		testDeckOfCards.Should().NotBeEmpty();
+		testDeckOfCards.Length.Should().Be(cardDeck.DeckOfCards.Length);
 	}
-
 
 
 }
