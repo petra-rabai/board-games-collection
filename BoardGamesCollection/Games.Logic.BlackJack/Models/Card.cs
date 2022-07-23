@@ -1,6 +1,6 @@
 ﻿namespace Games.BlackJack.Models;
 
-public class Card : ICard
+public class Card
 {
 	public int Id { get; set; }
 	public string Name { get; set; }

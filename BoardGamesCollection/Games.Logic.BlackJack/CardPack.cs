@@ -2,21 +2,21 @@
 
 namespace Games.BlackJack;
 
-public class CardDeck : ICardDeck
+public class CardPack : ICardPack
 {
 
-	public Card[] DeckOfCards { get; set; } = new Card[52];
+	public Card[] Cards { get; set; } = new Card[52];
 
-	public Card[] GetCardDeck()
+	public Card[] GetCardPack()
 	{
-		DeckOfCards = CreateDeck();
+		Cards = CreateDeck();
 
-		return DeckOfCards;
+		return Cards;
 	}
 
 	private Card[] CreateDeck()
 	{
-		Card[] cards = new Card[DeckOfCards.Length];
+		Card[] cards = new Card[Cards.Length];
 
 		int cardIndex = 0;
 
