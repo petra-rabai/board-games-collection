@@ -23,7 +23,7 @@ Gameboard:
 	playerName	
 	playerCredit
 	playerBet
-	gameGoal = cards sum equal 21
+	gameGoal = cards value sum equal 21
 	gameTurn
 	cardsAtStartforPlayer = 2
 	cardsAtStartforDealer = 2
