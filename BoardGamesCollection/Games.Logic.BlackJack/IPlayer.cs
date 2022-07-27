@@ -6,5 +6,6 @@ namespace Games.BlackJack
 	{
 		int Score { get; set; }
 		Decisions Decision { get; set; }
+
 	}
 }
